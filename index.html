@@ -5,7 +5,10 @@
 >
   <head>
     <link rel="stylesheet" href="estilos.css">
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="liam-invitacion\Super-Mario-Bros.png">
+    <meta property="og:type" content="website">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta
       name="viewport"
@@ -18,11 +21,6 @@
       property="og:title"
       content="¡Estás invitado a una gran aventura!"
     />
-    <script
-      src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
-      data-document-language="true"
-      data-domain-script="3cfa2a0c-9887-4f14-a162-a37b68418a76"
-    ></script>
     <link
       rel="stylesheet"
       href="https://alps.cdn.nintendo.net/v1/css/alps.css"
@@ -655,10 +653,8 @@
                   <div
                     class="vp-slide vp-slide--down video-inline-module--VideoInline--3ND7l wrapper"
                   >
-                    <div
-                      class="video-inline-module--VideoInline__content--3tTxl"
-                    >
-                      <button
+                    <div>
+                      <button id="play-button"
                         class="video-inline-module--VideoInline__button--oZCnI"
                       >
                         <div class="">
@@ -666,10 +662,8 @@
                             ><img
                               loading="lazy"
                               class="img-full"
-                              srcset="
-                                /static/b2df5b31e1a74a11b1d9c87e4819c263/8c3c2/video-button.jpg 1x
-                              "
-                              src="/static/b2df5b31e1a74a11b1d9c87e4819c263/8c3c2/video-button.jpg"
+                              srcset="liam_invita.png"
+                              src="liam_invita.png"
                               alt=""
                               width="1200"
                               height="675"
@@ -707,9 +701,9 @@
                 </div>
               </div>
               <div class="caja">
-                Fecha: <span id="fecha-cumple">10 de septiembre de 2023</span><br>
-                Hora: <span id="hora-evento">15:00:00</span><br>
-                Lugar: <span id="direccion-lugar">Calle Falsa 123</span><br>
+                Fecha: <span id="fecha-cumple">09 de septiembre de 2023</span><br>
+                Hora: <span id="hora-evento">16:30:00</span><br>
+                Lugar: <span id="direccion-lugar">Calle 21 n° 287 condominio los girasoles 2da etapa sala sum (2do piso)</span><br>
         
                 <div class="cuenta-regresiva">
                     Tiempo restante: <span id="tiempo"></span>
@@ -738,7 +732,7 @@
     </div>
     <script>
       // Establece la fecha y hora del cumpleaños (cámbiala según necesites)
-      let fechaCumple = new Date("2023-09-10 15:00:00"); // Ejemplo: new Date("2023-09-10 15:00:00");
+      let fechaCumple = new Date("2023-09-09 16:30:00"); // Ejemplo: new Date("2023-09-10 15:00:00");
 
       function actualizarCuentaRegresiva() {
           let ahora = new Date().getTime();
@@ -758,6 +752,23 @@
       }
 
       let intervalo = setInterval(actualizarCuentaRegresiva, 1000);
+
+       // Obtén una referencia al botón de reproducción
+      const playButton = document.getElementById("play-button");
+
+      // Agrega un manejador de clic al botón de reproducción
+      playButton.addEventListener("click", function() {
+      // Obtén una referencia al elemento de video
+      const videoElement = document.createElement("video");
+
+      // Configura las propiedades del video
+      videoElement.src = "video_liam_invita.mp4"; // Reemplaza con la ruta de tu video
+      videoElement.controls = true; // Muestra los controles de reproducción
+      videoElement.autoplay = true; // Inicia la reproducción automáticamente
+
+      // Remplaza el botón con el elemento de video
+      playButton.parentNode.replaceChild(videoElement, playButton);
+    });
   </script>
 
     <script id="gatsby-script-loader">
@@ -1198,5 +1209,8 @@
         });
       });
     </script>
+    <a href="https://www.google.com/maps/place/Condominio+Los+Girasoles+Segunda+Etapa/@-11.9256809,-77.059427,17z/data=!4m6!3m5!1s0x9105d1b4baead545:0xfde15a5c9fec6969!8m2!3d-11.9256372!4d-77.0572354!16s%2Fg%2F11crxrf5l_?entry=ttu">
+      <img src="maps.png" class="sobre" width="42" height="42" border="0" position="bottom" alt="Ver en google maps" />
+      </a>
   </body>
 </html>

@@ -8891,3 +8891,10 @@ nclood-footer .follow-nintendo a {
   .vjs-fluid {
     padding-top: 56.25%;
   }
+
+  .sobre {
+    position: fixed; /* Cambiado a fixed para mantener la posición en la ventana */
+    bottom: 20px;
+    right: 30px;
+    border: none;
+   }  
