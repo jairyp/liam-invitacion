@@ -8883,6 +8883,17 @@ nclood-footer .follow-nintendo a {
     font-weight: bold;
 }
 
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%; /* Evita que el video sea más ancho que su contenedor */
+}
+
+video {
+  width: 100%;
+  height: auto; /* Permite que la altura se ajuste automáticamente según el aspecto original */
+}
+
 .video-js {
     width: 300px;
     height: 150px;
